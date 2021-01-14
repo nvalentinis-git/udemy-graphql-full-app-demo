@@ -22,7 +22,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI);
 mongoose.connection
     .once('open', () => console.log('Connected to MongoLab instance.'))
-    .on('error', error => console.log('Error connecting to MongoLab:', error));
+    .on('error', error => console.error('Error connecting to MongoLab:', error));
 
 // Configures express to use sessions.  This places an encrypted identifier
 // on the users cookie.  When a user makes a request, this middleware examines
